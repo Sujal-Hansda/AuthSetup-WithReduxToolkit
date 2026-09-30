@@ -4,13 +4,15 @@ import AuthLayout from '../layout/AuthLayout'
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
 import MainLayout from "../layout/MainLayout"
-import Homepage from '../pages/Homepage'
+import Homepage from '../pages/HomePage'
 import { RouterProvider } from 'react-router'
 import { toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../features/authSlice'
 import PublicProtected from './protected/PublicProtected'
 import MainProtected from './protected/MainProtected'
+import ShopPage from '../pages/ShopPage'
+import AboutPage from '../pages/AboutPage'
 
 const AppRoutes = () => {
 
@@ -32,7 +34,7 @@ const AppRoutes = () => {
 
   useEffect(()=>
   {
-    hydrateUser();
+    hydrateUser;
   },[])
 
   let router = createBrowserRouter([
@@ -66,6 +68,16 @@ const AppRoutes = () => {
         path:"",
         element:<Homepage />
       },
+      {
+        path:"shop",
+        element:<ShopPage/>
+      },
+      {
+        path:"about",
+        element:<AboutPage/>
+      }
+      
+
     ]
       }]
     }
